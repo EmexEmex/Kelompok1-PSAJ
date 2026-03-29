@@ -1,0 +1,428 @@
+/* ======================================================
+   1. IMPORT FONT
+   Mengambil font Jost dari Google Fonts
+====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ======================================================
+   2. RESET & GLOBAL STYLE
+   Menghilangkan margin/padding default browser
+   dan membuat layout lebih konsisten
+====================================================== */
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* scroll jadi halus */
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ======================================================
+   3. BACKGROUND HALAMAN
+   Background utama website
+====================================================== */
+
+body {
+    background: url("./img/begroooon.jpeg") no-repeat center center / cover;
+
+    /* membuat bagian bawah melengkung */
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+/* Background halaman anggota */
+.anggota {
+    background: url("./img/P1110713.JPG") no-repeat center center / cover;
+}
+
+
+
+/* ======================================================
+   4. NAVBAR
+   Navigasi utama website
+====================================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 80px;
+
+    background: transparent;
+
+    /* efek kaca blur */
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
+    z-index: 999;
+}
+
+/* container navbar supaya isi tidak terlalu lebar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1600px;
+    width: 100%;
+
+    padding: 0 2rem;
+}
+
+/* logo */
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* menu navbar */
+.navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* link menu */
+.navbar-menu li a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+
+    padding: 3px 20px;
+
+    border-radius: 20px;
+    border: 2px solid transparent;
+
+    transition: 0.7s ease;
+}
+
+/* efek hover menu */
+.navbar-menu li a:hover {
+    background: rgba(255,46,46,0.85);
+    color: #eeffee;
+}
+
+
+/* ======================================================
+   5. HAMBURGER MENU (UNTUK MOBILE)
+====================================================== */
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* garis hamburger */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+
+    margin: 5px auto;
+
+    background: white;
+
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* ======================================================
+   6. BANNER / HERO SECTION
+   Bagian pembuka halaman
+====================================================== */
+
+.banner {
+    height: 100vh;
+
+    /* Layer background:
+       1. Gradient gelap di atas
+       2. Gradient putih di bawah
+       3. Gambar background
+    */
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(255,255,255,0) 65%),
+        linear-gradient(to bottom, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%),
+        url("img/background psaj.png") center / cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+/* konten banner */
+.banner-content h2 {
+    font-size: clamp(16px, 2vw, 26px);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.banner-content h1 {
+    font-size: clamp(18px, 8vw, 45px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+/* tombol banner */
+.btn-banner {
+    background-color: #e63946;
+    color: white;
+
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 28px);
+
+    border-radius: 20px;
+    text-decoration: none;
+
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-banner:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+}
+
+
+
+/* ======================================================
+   7. SECTION ANGGOTA
+   Menampilkan anggota dalam bentuk card
+====================================================== */
+
+.anggota-section {
+    padding: 20px 5%;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+/* judul */
+.anggota-title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+/* grid layout anggota */
+.anggota-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* card anggota */
+.anggota-card {
+    background: white;
+
+    padding: 10px;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.anggota-card:hover {
+    transform: translateY(-8px);
+}
+
+/* gambar anggota */
+.anggota-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* nama anggota */
+.anggota-card p {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+
+
+/* ======================================================
+   8. CTA SECTION (CALL TO ACTION)
+   Bagian tombol ajakan + kontak
+====================================================== */
+
+.cta-section {
+    padding: 80px 20px 40px;
+
+    background-image:
+        linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%),
+        url("background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* container agar tidak terlalu lebar */
+.cta-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+/* tombol utama */
+.cta-button {
+    display: inline-block;
+
+    background: red;
+    color: white;
+
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 28px);
+
+    border-radius: 50px;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin-bottom: 30px;
+
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: darkred;
+    transform: translateY(-2px);
+}
+
+/* kontak */
+.contact-person p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-links a {
+    margin: 0 6px;
+
+    font-size: 14px;
+    text-decoration: none;
+
+    color: white;
+    background: rgba(0,0,0,0.6);
+
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+
+
+/* ======================================================
+   9. RESPONSIVE DESIGN
+   Mengatur tampilan untuk layar kecil
+====================================================== */
+
+/* Tablet */
+@media (max-width: 880px) {
+
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-menu {
+        display: none;
+
+        flex-direction: column;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 250px;
+        height: 100vh;
+
+        padding: 5rem 1.5rem;
+        gap: 1.7rem;
+
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    /* animasi hamburger */
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* HP */
+@media (max-width: 768px) {
+
+    .anggota-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+
+    .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}

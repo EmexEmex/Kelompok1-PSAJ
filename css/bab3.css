@@ -1,0 +1,408 @@
+/* ======================================================
+   1. IMPORT FONT
+   Mengambil font Jost dari Google Fonts
+====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ======================================================
+   2. RESET & GLOBAL STYLE
+====================================================== */
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* scroll jadi halus */
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body,
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* ======================================================
+   3. BACKGROUND HALAMAN
+====================================================== */
+body {
+    background: url("/img/begroooon.jpeg") no-repeat center center / cover;
+}
+
+/* Background halaman anggota */
+.anggota {
+    background: url("./img/P1110713.JPG") no-repeat center center / cover;
+}
+
+
+/* ======================================================
+   4. NAVBAR
+====================================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 80px;
+
+    background: transparent;
+
+    /* efek kaca blur */
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
+    z-index: 999;
+}
+
+/* container navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1600px;
+    width: 100%;
+
+    padding: 0 2rem;
+}
+
+/* logo */
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* menu */
+.navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* link */
+.navbar-menu li a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+
+    padding: 3px 20px;
+
+    border-radius: 20px;
+    border: 2px solid transparent;
+
+    transition: 0.7s ease;
+}
+
+/* hover */
+.navbar-menu li a:hover {
+    background: rgba(255,46,46,0.85);
+    color: #eeffee;
+}
+
+
+/* ======================================================
+   5. HAMBURGER MENU
+====================================================== */
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* garis */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+
+    margin: 5px auto;
+
+    background: white;
+
+    transition: 0.3s ease-in-out;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+.bab1-header {
+    min-height: clamp(300px, 100dvh, 700px);
+
+    padding: 0 clamp(20px, 8vw, 120px);
+    padding-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+        url("img/begron.avif") center/cover no-repeat;
+}
+
+.bab1-header h1 {
+    font-size: clamp(40px, 10vw, 120px);
+    letter-spacing: 3px;
+}
+
+.bab1-header p {
+    opacity: 0.8;
+}
+
+
+/* HEADER ALTERNATIF */
+
+.bab-header {
+    min-height: clamp(300px, 100dvh, 700px);
+
+    padding: 0 clamp(20px, 8vw, 120px);
+    padding-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+        url("img/begron.avif") center/cover no-repeat;
+}
+
+.bab-header h1 {
+    font-size: clamp(40px, 10vw, 120px);
+    letter-spacing: 3px;
+}
+
+.bab-header p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    opacity: 0.8;
+}
+
+
+
+/* =========================
+   BLOCK KONTEN
+========================= */
+
+.bab-block {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+    background: white;
+}
+
+.bab-block.alt {
+    background: #f4f7ff;
+}
+
+.content {
+    max-width: 700px;
+}
+
+/* LABEL */
+.label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+/* JUDUL */
+h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 10px 0 20px;
+}
+
+/* PARAGRAF */
+p,
+li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.subjud {
+    color: #ffffff;
+}
+
+
+
+/* ======================================================
+   9. RESPONSIVE DESIGN
+====================================================== */
+
+/* Tablet */
+@media (max-width: 880px) {
+
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 250px;
+        height: 100vh;
+
+        padding: 5rem 1.5rem;
+        gap: 1.7rem;
+
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    /* animasi */
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* HP */
+@media (max-width: 768px) {
+    .anggota-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* HP kecil */
+@media (max-width: 480px) {
+
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+
+    .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}
+
+
+/* =========================
+   NAVIGASI ANTAR BAB
+========================= */
+.bab-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 60px 10%;
+    background: #ffffff;
+}
+
+/* BUTTON */
+.btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+/* KEMBALI */
+.btn.secondary {
+    border: 2px solid #ccc;
+    color: #555;
+}
+
+.btn.secondary:hover {
+    background: #f1f1f1;
+    transform: translateY(-3px);
+}
+
+/* LANJUT */
+.btn.primary {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    color: white;
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .bab-navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.paragraf {
+    text-align: justify;
+    line-height: 1.6;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+.nav-lokasi {
+    margin-top: 30px;
+    display: flex;
+    justify-content: left;
+}
